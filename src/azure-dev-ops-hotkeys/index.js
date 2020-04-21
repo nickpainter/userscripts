@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ADO - Generate branch name
-// @namespace    https://raw.githubusercontent.com/nickpainter/userscripts/master/src/azure-dev-ops-hotkeys
-// @version      1.0
+// @namespace    http://tampermonkey.net/
+// @version      1.1
 // @description  Pressing the F2 key within ADO will automatically fill in the branch name when creating a new branch from an existing work item.
 // @author       You
 // @match        https://danfoss.visualstudio.com/*
@@ -35,8 +35,10 @@ function doc_keyUp(e) {
   if (e.keyCode == 113) {
     // call your function to do the thing
     console.log({ itemId, itemTitle, itemType });
+    var newBranchName = `${itemTypeValue}/${itemId}_${itemTitle}`;
     document.querySelector(
       '[placeholder="Enter your branch name"]'
-    ).value = `${itemTypeValue}/${itemId}_${itemTitle}`;
+    ).value = newBranchName;
+    navigator.clipboard.writeText(newBranchName);
   }
 }
