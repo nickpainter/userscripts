@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         ADO - Generate branch name
-// @namespace    http://tampermonkey.net/
+// @namespace    https://raw.githubusercontent.com/nickpainter/userscripts/master/src/azure-dev-ops-hotkeys
 // @version      1.0
 // @description  Pressing the F2 key within ADO will automatically fill in the branch name when creating a new branch from an existing work item.
 // @author       You
